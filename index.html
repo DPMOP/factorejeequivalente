@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protección con contraseña</title>
+    <script>
+        function verificarClave() {
+            var clave = document.getElementById('clave').value;  // Obtiene el valor de la clave que ingresa el usuario
+            var claveCorrecta = "gatito";  // La clave correcta (en este caso "gatito")
+
+            if (clave === claveCorrecta) {  // Si la clave es correcta
+                // Cambiar la URL en la barra de direcciones sin recargar la página
+                history.pushState(null, null, "pagina-protegida.html");
+
+                // Redirigir a la página de Tableau con el enlace que proporcionaste
+                window.location.href = "https://public.tableau.com/views/prueba2_17412649854590/Dashboard1?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
+            } else {
+                alert("Clave incorrecta");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Ingrese la contraseña:</h2>
+    <input type="password" id="clave" placeholder="Contraseña">
+    <button onclick="verificarClave()">Acceder</button>
+</body>
+</html>
